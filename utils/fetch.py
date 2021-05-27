@@ -5,7 +5,7 @@ from .text import question_mapping
 
 
 directory = os.path.dirname(__file__)
-data_path = os.path.join(directory, "../", "data")
+data_path = os.path.join(directory, "data")
 
 
 def label_category(row):
@@ -28,7 +28,7 @@ def viz_compose(dfs):
 
 
 def data_normalize():
-    df = pd.read_csv(f"{data_path}\\raw_mat013_forms.csv", encoding="utf-8").drop(columns=["Carimbo de data/hora"])
+    df = pd.read_csv(f"{data_path}/raw_mat013_forms.csv", encoding="utf-8").drop(columns=["Carimbo de data/hora"])
 
     work_group = df.groupby(df["Categorização do trabalho"])
     employed = work_group.get_group("Empregado")
