@@ -16,7 +16,6 @@ side_bar = st.sidebar
 
 
 def _amostra(visualizations, raw_data):
-    st.subheader("Amostra")
     cols = st.beta_columns(2)
     amostras = ("Tipo de trabalho", "Categoria")
     for i, amostra in enumerate(amostras):
@@ -64,6 +63,7 @@ def main():
         "Empregado - Home Office": home_office,
         "Empregado - Presencial": on_office,
         "Não Empregado": unemployed,
+        "Nunca trabalhou home office": not_home_office,
         "Vizualização Comparativa": visualizations
     }
 
