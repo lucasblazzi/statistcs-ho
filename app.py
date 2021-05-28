@@ -15,17 +15,20 @@ pd.set_option('display.max_colwidth', None)
 side_bar = st.sidebar
 
 
-def _amostra(visualizations):
+def _amostra(visualizations, raw_data):
     st.subheader("Amostra")
-    i = 0
     cols = st.beta_columns(2)
     amostras = ("Tipo de trabalho", "Categoria")
-    for amostra in amostras:
+    for i, amostra in enumerate(amostras):
         count_amostra = visualizations[amostra].value_counts()
         amostra_bar = get_bar(count_amostra, x=amostra, y=count_amostra.index,
-                              title=f"Amostra - {amostra}")
+                              title=amostra)
         cols[i].plotly_chart(amostra_bar)
-        i += 1
+
+    count_raw = raw_data["Curso"].value_counts()
+    raw_bar = get_bar(count_raw, x=count_raw.index, y="Curso",
+                          title="Distribuição por curso", width=1000, height=500)
+    cols[0].plotly_chart(raw_bar)
 
 
 def _comparison(visualizations):
@@ -40,6 +43,12 @@ def _base_scatter(home_office):
     y = "Horas trabalhadas"
     f = get_scatter(home_office, x, y)
     st.plotly_chart(f)
+
+
+def _set_title(title):
+    st.markdown("____")
+    st.header(title)
+    st.markdown("<br><br>", unsafe_allow_html=True)
 
 
 def main():
@@ -58,7 +67,7 @@ def main():
         "Vizualização Comparativa": visualizations
     }
 
-    selection = side_bar.selectbox("Selecione", ["Dados Brutos", "Dashboard"])
+    selection = side_bar.selectbox("Selecione", ["Dashboard", "Dados Brutos"])
 
     if selection == "Dados Brutos":
         st.subheader("Questions")
@@ -68,10 +77,14 @@ def main():
             st.dataframe(value)
 
     elif selection == "Dashboard":
-        _amostra(visualizations)
-        _base_scatter(home_office)
+        _set_title("Análise Amostral")
+        _amostra(visualizations, raw_data)
+
+        _set_title("Análise de Perspectivas")
         _comparison(visualizations)
 
+        _set_title("Outras Observações")
+        _base_scatter(home_office)
 
 if __name__ == "__main__":
     main()

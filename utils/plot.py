@@ -31,8 +31,21 @@ def get_scatter(data, x, y):
     return fig
 
 
-def get_bar(data, x, y, title):
-    fig = px.bar(data, x=x, y=y, color=y, title=title)
+def get_bar(data, x, y, title, width=800, height=400):
+    fig = px.bar(data, x=x, y=y, color=y)
+    fig.update_layout(
+        title=dict(text=f"<b>{title}</b>",
+                   y=0.95, x=0.48,
+                   xanchor='center', yanchor='top'
+                   ),
+        yaxis=dict(
+            title='',
+            titlefont_size=16,
+            tickfont_size=14,
+        ),
+        width=width,
+        height=height
+    )
     return fig
 
 
