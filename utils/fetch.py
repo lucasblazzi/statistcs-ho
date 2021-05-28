@@ -62,4 +62,4 @@ def data_normalize():
 
 
 def get_data(name):
-    return pd.read_csv(f"{data_path}\\{name}.csv", encoding="utf-8")
+    return pd.read_csv(f"{data_path}/{name}.csv", encoding="utf-8")
