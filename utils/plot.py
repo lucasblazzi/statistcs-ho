@@ -15,24 +15,21 @@ def get_line(data, x, y, ref):
     return fig
 
 
-def get_box(data, x, y):
-    fig = go.Figure()
-    fig.add_trace(go.Box(
-        y=data[y], x=data[x],
-        boxpoints='outliers',
-        marker_color='rgb(107,174,214)',
-        line_color='rgb(107,174,214)'
-    ))
-    return fig
-
-
 def get_scatter(data, x, y):
     fig = px.scatter(data, x=x, y=y, color="O trabalho remoto afetou os estudos?")
+    fig.update_layout(
+        title=dict(text=f"<b>Avaliação - Por que o Home Office afeta os estudos?</b>",
+                   y=0.95, x=0.45,
+                   xanchor='center', yanchor='top'
+                   ),
+        width=1000,
+        height=500
+    )
     return fig
 
 
-def get_bar(data, x, y, title, width=700, height=400):
-    fig = px.bar(data, x=x, y=y, color=y)
+def get_pie(data, x, y, title, width=500, height=500):
+    fig = px.pie(data, values=x, names=y, color_discrete_sequence=px.colors.qualitative.D3)
     fig.update_layout(
         title=dict(text=f"<b>{title}</b>",
                    y=0.95, x=0.48,
@@ -43,6 +40,25 @@ def get_bar(data, x, y, title, width=700, height=400):
             titlefont_size=16,
             tickfont_size=14,
         ),
+        width=width,
+        height=height
+    )
+    return fig
+
+
+def get_bar(data, x, y, title, color, width=700, height=400):
+    fig = px.bar(data, x=x, y=y, color=color, color_discrete_sequence=px.colors.qualitative.D3)
+    fig.update_layout(
+        title=dict(text=f"<b>{title}</b>",
+                   y=0.95, x=0.48,
+                   xanchor='center', yanchor='top'
+                   ),
+        yaxis=dict(
+            title='',
+            titlefont_size=16,
+            tickfont_size=14,
+        ),
+        showlegend=False,
         width=width,
         height=height
     )
@@ -80,7 +96,68 @@ def get_multi_bar(visualizations, visualization):
             title='%',
             titlefont_size=16,
             tickfont_size=14,
-        )
+        ),
+        width=900,
+        height=500
     )
 
     return fig
+
+
+def get_histogram(df, title):
+    fig = go.Figure(data=[go.Histogram(x=df["Vontade x Satisfação"], xbins=dict(start=1, end=10, size=1))])
+    fig.update_layout(
+        title = dict(text=f"<b>{title}</b>",
+                     y=0.90, x=0.5,
+                     xanchor='center', yanchor='top'
+                     ),
+        yaxis=dict(
+            title="Contagem",
+            titlefont_size=16,
+            tickfont_size=14,
+        ),
+    )
+    return fig
+
+
+def get_table(data, col, title, width=500, height=500):
+    df = data[col].describe().reset_index()
+    _table = go.Figure(go.Table(
+        columnwidth=[1, 1],
+        header=dict(
+            values=[f"<b>{name}<b>" for name in df.columns],
+            font=dict(size=12, color="white"),
+            line_color='darkslategray',
+            fill_color='#404040',
+            align="center"
+        ),
+        cells=dict(
+            values=[df[name] for name in df.columns],
+            line_color='darkslategray',
+            fill_color='#f0f2f6',
+            align = "center"
+        ))
+    )
+    _table.update_layout(
+        title=dict(text=f"<b>{title}</b>",
+                   y=0.9 ,x=0.5,
+                   xanchor='center' ,yanchor='top'
+                   ),
+        width=width,
+        height=height
+    )
+    return _table
+
+
+def get_box(data, title, name, col):
+    box = go.Figure()
+    box.add_trace(go.Box(x=data[col], quartilemethod="linear", name=name))
+    box.update_layout(
+        title=dict(text=f"<b>{title}</b>",
+                   y=0.9,x=0.5,
+                   xanchor='center',yanchor='top'
+                   ),
+        width=600,
+        height=400
+    )
+    return box

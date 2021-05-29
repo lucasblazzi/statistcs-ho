@@ -60,40 +60,43 @@
 58,Não empregado,Negativamente,Maior,Igual,1.0,Não Remoto
 59,Não empregado,Neutro,Menor,Menor,5.0,Não Remoto
 60,Não empregado,Negativamente,Maior,Menor,8.0,Não Remoto
-61,Presencial,Neutro,Maior,Maior,10.0,Não Remoto
-62,Presencial,Positivamente,Igual,Maior,10.0,Não Remoto
-63,Presencial,Positivamente,Maior,Maior,10.0,Não Remoto
-64,Presencial,Negativamente,Menor,Menor,5.0,Não Remoto
-65,Presencial,Neutro,Igual,Igual,10.0,Não Remoto
-66,Presencial,Neutro,Maior,Menor,1.0,Não Remoto
-67,Presencial,Neutro,Igual,Menor,6.0,Não Remoto
-68,Presencial,Negativamente,Maior,Igual,7.0,Não Remoto
-69,Presencial,Neutro,Maior,Menor,1.0,Não Remoto
-70,Presencial,Neutro,Maior,Menor,7.0,Não Remoto
-71,Presencial,Neutro,Igual,Menor,8.0,Não Remoto
-72,Presencial,Neutro,Maior,Menor,8.0,Não Remoto
-73,Presencial,Neutro,Igual,Igual,10.0,Não Remoto
-74,Presencial,Neutro,Maior,Menor,8.0,Não Remoto
-75,Remoto,Neutro,Igual,Igual,7.0,Remoto
-76,Remoto,Positivamente,Igual,Maior,10.0,Remoto
-77,Remoto,Neutro,Maior,Menor,6.0,Remoto
-78,Remoto,Negativamente,Maior,Menor,2.0,Remoto
-79,Remoto,Negativamente,Igual,Menor,5.0,Remoto
-80,Remoto,Neutro,Maior,Maior,7.0,Remoto
-81,Remoto,Neutro,Igual,Maior,10.0,Remoto
-82,Remoto,Negativamente,Maior,Maior,8.0,Remoto
-83,Remoto,Neutro,Igual,Maior,9.0,Remoto
-84,Remoto,Negativamente,Maior,Maior,9.0,Remoto
-85,Remoto,Neutro,Igual,Igual,5.0,Remoto
-86,Remoto,Positivamente,Menor,Maior,10.0,Remoto
-87,Remoto,Negativamente,Maior,Maior,10.0,Remoto
-88,Remoto,Neutro,Maior,Maior,8.0,Remoto
-89,Remoto,Negativamente,Igual,Maior,9.0,Remoto
-90,Remoto,Negativamente,Maior,Maior,8.0,Remoto
-91,Remoto,Positivamente,Maior,Igual,7.0,Remoto
-92,Remoto,Negativamente,Maior,Maior,10.0,Remoto
-93,Remoto,Neutro,Igual,Maior,10.0,Remoto
-94,Remoto,Negativamente,Maior,Maior,8.0,Remoto
-95,Remoto,Negativamente,Maior,Maior,10.0,Remoto
-96,Remoto,Neutro,Maior,Maior,9.0,Remoto
-97,Remoto,Negativamente,Maior,Maior,8.0,Remoto
+61,Não empregado,Neutro,Maior,Menor,6.0,Não Remoto
+62,Presencial,Neutro,Maior,Maior,10.0,Não Remoto
+63,Presencial,Positivamente,Igual,Maior,10.0,Não Remoto
+64,Presencial,Positivamente,Maior,Maior,10.0,Não Remoto
+65,Presencial,Negativamente,Menor,Menor,5.0,Não Remoto
+66,Presencial,Neutro,Igual,Igual,10.0,Não Remoto
+67,Presencial,Neutro,Maior,Menor,1.0,Não Remoto
+68,Presencial,Neutro,Igual,Menor,6.0,Não Remoto
+69,Presencial,Negativamente,Maior,Igual,7.0,Não Remoto
+70,Presencial,Neutro,Maior,Menor,1.0,Não Remoto
+71,Presencial,Neutro,Maior,Menor,7.0,Não Remoto
+72,Presencial,Neutro,Igual,Menor,8.0,Não Remoto
+73,Presencial,Neutro,Maior,Menor,8.0,Não Remoto
+74,Presencial,Neutro,Igual,Igual,10.0,Não Remoto
+75,Presencial,Neutro,Maior,Menor,8.0,Não Remoto
+76,Presencial,Neutro,Menor,Igual,4.0,Não Remoto
+77,Remoto,Neutro,Igual,Igual,7.0,Remoto
+78,Remoto,Positivamente,Igual,Maior,10.0,Remoto
+79,Remoto,Neutro,Maior,Menor,6.0,Remoto
+80,Remoto,Negativamente,Maior,Menor,2.0,Remoto
+81,Remoto,Negativamente,Igual,Menor,5.0,Remoto
+82,Remoto,Neutro,Maior,Maior,7.0,Remoto
+83,Remoto,Neutro,Igual,Maior,10.0,Remoto
+84,Remoto,Negativamente,Maior,Maior,8.0,Remoto
+85,Remoto,Neutro,Igual,Maior,9.0,Remoto
+86,Remoto,Negativamente,Maior,Maior,9.0,Remoto
+87,Remoto,Neutro,Igual,Igual,5.0,Remoto
+88,Remoto,Positivamente,Menor,Maior,10.0,Remoto
+89,Remoto,Negativamente,Maior,Maior,10.0,Remoto
+90,Remoto,Neutro,Maior,Maior,8.0,Remoto
+91,Remoto,Negativamente,Igual,Maior,9.0,Remoto
+92,Remoto,Negativamente,Maior,Maior,8.0,Remoto
+93,Remoto,Positivamente,Maior,Igual,7.0,Remoto
+94,Remoto,Negativamente,Maior,Maior,10.0,Remoto
+95,Remoto,Neutro,Igual,Maior,10.0,Remoto
+96,Remoto,Negativamente,Maior,Maior,8.0,Remoto
+97,Remoto,Negativamente,Maior,Maior,10.0,Remoto
+98,Remoto,Neutro,Maior,Maior,9.0,Remoto
+99,Remoto,Negativamente,Maior,Maior,8.0,Remoto
+100,Remoto,Negativamente,Maior,Maior,8.0,Remoto

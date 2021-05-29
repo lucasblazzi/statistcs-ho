@@ -60,17 +60,19 @@
 58,Química Licenciatura,Não empregado,Sim,Negativamente,Maior,Igual,1.0,,Não empregado
 59,Matemática Bacharelado,Não empregado,Sim,Neutro,Menor,Menor,5.0,"Por conta de ser em casa,  nao ter espaço adequado pra isso",Não empregado
 60,Engenharia Ambiental,Não empregado,Sim,Negativamente,Maior,Menor,8.0,,Não empregado
-61,Sistemas de Informação,Empregado,Sim,Neutro,Maior,Maior,10.0,Não iria conseguir um local adequado em casa para realizar o trabalho remoto ,Presencial
-62,Sistemas de Informação,Empregado,Não,Positivamente,Igual,Maior,10.0,Não,Presencial
-63,Sistemas de Informação,Empregado,Sim,Positivamente,Maior,Maior,10.0,Não,Presencial
-64,Física Bacharelado,Empregado,Sim,Negativamente,Menor,Menor,5.0,,Presencial
-65,Engenharia Química,Empregado,Sim,Neutro,Igual,Igual,10.0,Não,Presencial
-66,Química Licenciatura,Empregado,Não,Neutro,Maior,Menor,1.0,O tipo de trabalho que eu exerço não é possível remotamente.,Presencial
-67,Sistemas de Informação,Empregado,Sim,Neutro,Igual,Menor,6.0,Sim,Presencial
-68,Ciência da Computação,Empregado,Não,Negativamente,Maior,Igual,7.0,,Presencial
-69,Química Licenciatura,Empregado,Não,Neutro,Maior,Menor,1.0,,Presencial
-70,Sistemas de Informação,Empregado,Não,Neutro,Maior,Menor,7.0,Acredito que a comodidade de estar em casa afeta o desempenho no trabalho.,Presencial
-71,Engenharia Ambiental,Empregado,Sim,Neutro,Igual,Menor,8.0,,Presencial
-72,Física Bacharelado,Empregado,Sim,Neutro,Maior,Menor,8.0,Não,Presencial
-73,Sistemas de Informação,Empregado,Sim,Neutro,Igual,Igual,10.0,,Presencial
-74,Sistemas de Informação,Empregado,Sim,Neutro,Maior,Menor,8.0,Acredito que trabalho remoto pode ser afetado pelo excesso de conforto de estar em casa.,Presencial
+61,Engenharia Ambiental,Não empregado,Sim,Neutro,Maior,Menor,6.0,,Não empregado
+62,Sistemas de Informação,Empregado,Sim,Neutro,Maior,Maior,10.0,Não iria conseguir um local adequado em casa para realizar o trabalho remoto ,Presencial
+63,Sistemas de Informação,Empregado,Não,Positivamente,Igual,Maior,10.0,Não,Presencial
+64,Sistemas de Informação,Empregado,Sim,Positivamente,Maior,Maior,10.0,Não,Presencial
+65,Física Bacharelado,Empregado,Sim,Negativamente,Menor,Menor,5.0,,Presencial
+66,Engenharia Química,Empregado,Sim,Neutro,Igual,Igual,10.0,Não,Presencial
+67,Química Licenciatura,Empregado,Não,Neutro,Maior,Menor,1.0,O tipo de trabalho que eu exerço não é possível remotamente.,Presencial
+68,Sistemas de Informação,Empregado,Sim,Neutro,Igual,Menor,6.0,Sim,Presencial
+69,Ciência da Computação,Empregado,Não,Negativamente,Maior,Igual,7.0,,Presencial
+70,Química Licenciatura,Empregado,Não,Neutro,Maior,Menor,1.0,,Presencial
+71,Sistemas de Informação,Empregado,Não,Neutro,Maior,Menor,7.0,Acredito que a comodidade de estar em casa afeta o desempenho no trabalho.,Presencial
+72,Engenharia Ambiental,Empregado,Sim,Neutro,Igual,Menor,8.0,,Presencial
+73,Física Bacharelado,Empregado,Sim,Neutro,Maior,Menor,8.0,Não,Presencial
+74,Sistemas de Informação,Empregado,Sim,Neutro,Igual,Igual,10.0,,Presencial
+75,Sistemas de Informação,Empregado,Sim,Neutro,Maior,Menor,8.0,Acredito que trabalho remoto pode ser afetado pelo excesso de conforto de estar em casa.,Presencial
+76,Sistemas de Informação,Empregado,Sim,Neutro,Menor,Igual,4.0,Sim,Presencial
