@@ -3,6 +3,11 @@ import plotly.figure_factory as ff
 import plotly.graph_objects as go
 
 
+colors = ["#05445e", "#75e6da", "#189ab4", "#00938e", "#d4f1f4", "#006b7f", "#626897",
+          "#3bba8a", "#35577c", "#c189ba", "#98dd7a", "#f9f871", "#ef9bc1"]
+
+default_color = ["#004c6d", "#005f82", "#007396", "#0087aa", "#009cbd", "#00b1cf", "#00c7e1", "#00ddf0", "#00f4ff"]
+
 def plot_scatter(data, x, y):
     fig = px.scatter(data, x=x, y=y, color="O trabalho remoto afetou os estudos?")
     fig.update_layout(
@@ -17,7 +22,7 @@ def plot_scatter(data, x, y):
 
 
 def plot_pie(data, x, y, title, width=500, height=500):
-    fig = px.pie(data, values=x, names=y, color_discrete_sequence=px.colors.qualitative.D3)
+    fig = px.pie(data, values=x, names=y, color_discrete_sequence=colors)
     fig.update_layout(
         title=dict(text=f"<b>{title}</b>",
                    y=0.95, x=0.48,
@@ -35,7 +40,7 @@ def plot_pie(data, x, y, title, width=500, height=500):
 
 
 def plot_bar(data, x, y, title, color, width=700, height=400):
-    fig = px.bar(data, x=x, y=y, color=color, color_discrete_sequence=px.colors.qualitative.D3)
+    fig = px.bar(data, x=x, y=y, color=y, color_continuous_scale=default_color)
     fig.update_layout(
         title=dict(text=f"<b>{title}</b>",
                    y=0.95, x=0.48,
@@ -63,7 +68,7 @@ def plot_multi_bar(visualizations, visualization):
         x=not_office_count.index,
         y=(not_office_count/not_office_count.sum())*100,
         name=f'Não Home Office',
-        marker_color='indianred'
+        marker_color=colors[0]
     ))
 
     home_count = home_office[visualization].value_counts()
@@ -71,7 +76,7 @@ def plot_multi_bar(visualizations, visualization):
         x=home_count.index,
         y=(home_count/home_count.sum())*100,
         name=f'Home Office',
-        marker_color='lightsalmon'
+        marker_color=colors[1]
     ))
 
     fig.update_layout(
