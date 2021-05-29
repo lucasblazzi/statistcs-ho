@@ -2,20 +2,8 @@ import plotly.express as px
 import plotly.figure_factory as ff
 import plotly.graph_objects as go
 
-color_list = px.colors.qualitative.Safe
 
-
-def get_line(data, x, y, ref):
-    fig = px.line(data, x=x, y=y, color=ref)
-    fig.update_layout(
-                plot_bgcolor="rgba(0, 0, 0, 0)",
-                width=1000, height=500,
-                xaxis=dict(tickformat="%b %d %Y"))
-
-    return fig
-
-
-def get_scatter(data, x, y):
+def plot_scatter(data, x, y):
     fig = px.scatter(data, x=x, y=y, color="O trabalho remoto afetou os estudos?")
     fig.update_layout(
         title=dict(text=f"<b>Avaliação - Por que o Home Office afeta os estudos?</b>",
@@ -28,7 +16,7 @@ def get_scatter(data, x, y):
     return fig
 
 
-def get_pie(data, x, y, title, width=500, height=500):
+def plot_pie(data, x, y, title, width=500, height=500):
     fig = px.pie(data, values=x, names=y, color_discrete_sequence=px.colors.qualitative.D3)
     fig.update_layout(
         title=dict(text=f"<b>{title}</b>",
@@ -46,7 +34,7 @@ def get_pie(data, x, y, title, width=500, height=500):
     return fig
 
 
-def get_bar(data, x, y, title, color, width=700, height=400):
+def plot_bar(data, x, y, title, color, width=700, height=400):
     fig = px.bar(data, x=x, y=y, color=color, color_discrete_sequence=px.colors.qualitative.D3)
     fig.update_layout(
         title=dict(text=f"<b>{title}</b>",
@@ -65,7 +53,7 @@ def get_bar(data, x, y, title, color, width=700, height=400):
     return fig
 
 
-def get_multi_bar(visualizations, visualization):
+def plot_multi_bar(visualizations, visualization):
     fig = go.Figure()
     home_office = visualizations.loc[visualizations["Categoria"] == "Remoto"]
     not_home_office = visualizations.loc[visualizations["Categoria"] == "Não Remoto"]
@@ -104,7 +92,7 @@ def get_multi_bar(visualizations, visualization):
     return fig
 
 
-def get_histogram(df, title):
+def plot_histogram(df, title):
     fig = go.Figure(data=[go.Histogram(x=df["Vontade x Satisfação"], xbins=dict(start=1, end=10, size=1))])
     fig.update_layout(
         title = dict(text=f"<b>{title}</b>",
@@ -120,7 +108,7 @@ def get_histogram(df, title):
     return fig
 
 
-def get_table(data, col, title, width=500, height=500):
+def plot_table(data, col, title, width=500, height=500):
     df = data[col].describe().reset_index()
     _table = go.Figure(go.Table(
         columnwidth=[1, 1],
@@ -149,7 +137,7 @@ def get_table(data, col, title, width=500, height=500):
     return _table
 
 
-def get_box(data, title, name, col):
+def plot_box(data, title, name, col):
     box = go.Figure()
     box.add_trace(go.Box(x=data[col], quartilemethod="linear", name=name))
     box.update_layout(

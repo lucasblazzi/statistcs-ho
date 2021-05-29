@@ -2,17 +2,17 @@ import streamlit as st
 import pandas as pd
 import plotly.figure_factory as ff
 
-from .utils.fetch import get_data
-from .utils.plot import get_scatter
-from .utils.plot import get_bar
-from .utils.plot import get_table
-from .utils.plot import get_pie
-from .utils.plot import get_box
-from .utils.plot import get_multi_bar
-from .utils.plot import get_histogram
-from .utils.text import sample_text
+from utils.fetch import get_data
+from utils.plot import plot_scatter
+from utils.plot import plot_bar
+from utils.plot import plot_table
+from utils.plot import plot_pie
+from utils.plot import plot_box
+from utils.plot import plot_multi_bar
+from utils.plot import plot_histogram
+from utils.text import sample_text
 
-from .utils.text import question_mapping
+from utils.text import question_mapping
 
 st.set_page_config(layout='wide')
 pd.set_option('display.max_colwidth', None)
@@ -31,12 +31,12 @@ def _amostra(visualizations, raw_data):
     amostras = ("Tipo de trabalho", "Categoria")
     for i, amostra in enumerate(amostras):
         count_amostra = visualizations[amostra].value_counts()
-        amostra_bar = get_pie(count_amostra, x=amostra, y=count_amostra.index,
+        amostra_bar = plot_pie(count_amostra, x=amostra, y=count_amostra.index,
                               title=amostra)
         cols[i].plotly_chart(amostra_bar)
 
     count_raw = raw_data["Curso"].value_counts()
-    raw_bar = get_bar(count_raw, x=count_raw.index, y="Curso",
+    raw_bar = plot_bar(count_raw, x=count_raw.index, y="Curso",
                           title="Distribuição por curso", width=1100, height=600, color=count_raw.index)
     cols[0].plotly_chart(raw_bar)
     cols[2].markdown("<br><br>", unsafe_allow_html=True)
@@ -47,7 +47,7 @@ def _comparison(visualizations):
     compare = ("Performance", "Carga Horária", "Impacto nos estudos")
     for comp in compare:
         cols = st.beta_columns([0.55, 0.45])
-        fig = get_multi_bar(visualizations, comp)
+        fig = plot_multi_bar(visualizations, comp)
         cols[0].plotly_chart(fig)
         cols[1].markdown("<br><br><br>", unsafe_allow_html=True)
         cols[1].write(sample_text)
@@ -58,7 +58,7 @@ def _base_scatter(home_office):
     cols = st.beta_columns([0.7, 0.3])
     x = "Qual é seu nível de satisfação com o trabalho remoto?"
     y = "Horas trabalhadas"
-    f = get_scatter(home_office, x, y)
+    f = plot_scatter(home_office, x, y)
     cols[0].plotly_chart(f)
     cols[1].markdown("<br><br>", unsafe_allow_html=True)
     cols[1].write(sample_text)
@@ -72,13 +72,13 @@ def _satsxreal(visualizations):
     c = 0
     for k, val in comp.items():
         v = visualizations.loc[visualizations["Categoria"] == k]
-        hist = get_histogram(v, title=val)
-        box = get_box(v, val, k, "Vontade x Satisfação")
+        hist = plot_histogram(v, title=val)
+        box = plot_box(v, val, k, "Vontade x Satisfação")
         cols[i].plotly_chart(hist)
         if c > 0:
             cols[i+1].markdown("<br><br>", unsafe_allow_html=True)
         cols[i+1].plotly_chart(box)
-        table = get_table(v, "Vontade x Satisfação", title=val)
+        table = plot_table(v, "Vontade x Satisfação", title=val)
         cols[i+2].plotly_chart(table)
         c+=1
     st.write(sample_text)
