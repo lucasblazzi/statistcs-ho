@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 
-from .text import question_mapping
+from text import question_mapping
 
 
 directory = os.path.dirname(__file__)
@@ -63,3 +63,6 @@ def data_normalize():
 
 def get_data(name):
     return pd.read_csv(f"{data_path}/{name}.csv", encoding="utf-8")
+
+
+data_normalize()
