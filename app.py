@@ -2,17 +2,17 @@ import streamlit as st
 import pandas as pd
 import plotly.figure_factory as ff
 
-from utils.fetch import get_data
-from utils.plot import get_scatter
-from utils.plot import get_bar
-from utils.plot import get_table
-from utils.plot import get_pie
-from utils.plot import get_box
-from utils.plot import get_multi_bar
-from utils.plot import get_histogram
-from utils.text import sample_text
+from .utils.fetch import get_data
+from .utils.plot import get_scatter
+from .utils.plot import get_bar
+from .utils.plot import get_table
+from .utils.plot import get_pie
+from .utils.plot import get_box
+from .utils.plot import get_multi_bar
+from .utils.plot import get_histogram
+from .utils.text import sample_text
 
-from utils.text import question_mapping
+from .utils.text import question_mapping
 
 st.set_page_config(layout='wide')
 pd.set_option('display.max_colwidth', None)
