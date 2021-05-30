@@ -10,9 +10,15 @@ from utils.plot import plot_pie
 from utils.plot import plot_box
 from utils.plot import plot_multi_bar
 from utils.plot import plot_histogram
-from utils.text import sample_text
 
+from utils.text import sample_text
+from utils.text import performance_text
+from utils.text import work_hours_text
+from utils.text import academic_impact_text
 from utils.text import question_mapping
+from utils.text import abstract
+from utils.text import sample_analysis
+from utils.text import satsxwill_text
 
 st.set_page_config(layout='wide')
 pd.set_option('display.max_colwidth', None)
@@ -24,6 +30,7 @@ def _header():
     st.title('MAT013 - Probabilidade e Estatistica')
     st.header('Análise comparativa de perspectivas relacionadas ao Home Office')
     st.markdown("____")
+    st.markdown(abstract, unsafe_allow_html=True)
 
 
 def _amostra(visualizations, raw_data):
@@ -40,17 +47,18 @@ def _amostra(visualizations, raw_data):
                           title="Distribuição por curso", width=1100, height=600, color=count_raw.index)
     cols[0].plotly_chart(raw_bar)
     cols[2].markdown("<br><br>", unsafe_allow_html=True)
-    cols[2].write(sample_text)
+    cols[2].markdown(sample_analysis, unsafe_allow_html=True)
 
 
 def _comparison(visualizations):
     compare = ("Performance", "Carga Horária", "Impacto nos estudos")
-    for comp in compare:
+    results = (performance_text , work_hours_text, academic_impact_text)
+    for comp, res in zip(compare, results):
         cols = st.beta_columns([0.55, 0.45])
         fig = plot_multi_bar(visualizations, comp)
         cols[0].plotly_chart(fig)
         cols[1].markdown("<br><br><br>", unsafe_allow_html=True)
-        cols[1].write(sample_text)
+        cols[1].markdown(res, unsafe_allow_html=True)
 
 
 def _base_scatter(home_office):
@@ -81,7 +89,7 @@ def _satsxreal(visualizations):
         table = plot_table(v, "Vontade x Satisfação", title=val)
         cols[i+2].plotly_chart(table)
         c+=1
-    st.write(sample_text)
+    st.markdown(satsxwill_text, unsafe_allow_html=True)
 
 
 def _set_title(title):
@@ -107,15 +115,20 @@ def main():
         "Vizualização Comparativa": visualizations
     }
 
-    selection = side_bar.selectbox("Selecione", ["Dashboard", "Dados Brutos"])
+    selection = side_bar.selectbox("Selecione", ["Dashboard", "Dados"])
 
-    if selection == "Dados Brutos":
-        _header()
-        st.subheader("Questions")
+    if selection == "Dados":
+        st.subheader("Questões")
         st.dataframe(raw_data.columns)
+        exclude = ("Qual é a sua vontade de trabalhar remotamente?", "Vontade x Satisfação")
         for key, value in sets.items():
             st.subheader(key)
             st.dataframe(value)
+            for i, column in enumerate(value.columns):
+                if i == 0 or column in exclude or key == "Dados Brutos":
+                    continue
+                st.dataframe(value[column].value_counts())
+            st.markdown("____")
 
     elif selection == "Dashboard":
         _header()
@@ -125,10 +138,8 @@ def main():
         _set_title("Análise de Perspectivas")
         _comparison(visualizations)
 
-        st.markdown("____")
         _set_title("Outras Observações")
         _satsxreal(visualizations)
-        _base_scatter(home_office)
 
 
 if __name__ == "__main__":
