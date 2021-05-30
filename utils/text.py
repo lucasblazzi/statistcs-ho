@@ -35,12 +35,13 @@ abstract = "A pesquisa tem como objetivo principal fazer a **comparação entre 
          "Como você acredita que o trabalho remoto possa afetar os estudos? vs O trabalho remoto afetou os estudos? " \
          "diferenciando os dois grupos (as questões aplicadas podem ser visualizadas na aba de dados). Por fim, esse " \
          "levantamento resultou em uma **amostra de 105 alunos** que foram organizadas e divididas em tabelas para visualização, " \
-         "que também podem ser vistas na aba de dados.\n As análises de resultado podem ser observadas abaixo:"
+         "que também podem ser vistas na aba de dados.\n As análises de resultado abaixo foram feitas a partir da proporção " \
+           "relativa de respostas em cada agrupamento."
 
 sample_analysis = "A partir da coleta dos dados podemos notar que a maioria dos alunos que responderam o questionário " \
                   "se encaixaram no grupo de 'Não empregado' (62.7%) que associado aos que trabalham presencialmente (14.3%) " \
-                  "levaram a um agrupamento de pessoas que tiveram contato com home office (22.9%) vs. pessoas que nunca " \
-                  "trabalharam remotamente (77.1%), percebendo assim uma assimetria na categorização das amostras, fator esse " \
+                  "levaram a um agrupamento DE pessoas que nunca " \
+                  "trabalharam remotamente (77.1%) vs. pessoas que tiveram contato com home office (22.9%), percebendo assim uma assimetria na categorização das amostras, fator esse " \
                   "que motivou a equipe a trabalhar com proporções relativas para a comparação dos dados, já que a média " \
                   "dos dados poderia ser tendenciosa.<br><br><br><br><br><br><br><br><br><br><br><br><br><br>" \
                    "Além disso, como os integrantes da equipe cursam Sistemas de " \
@@ -56,7 +57,7 @@ performance_text = "Para a comparação de performance foram realizadas as pergu
                    "foi observada a proporção relativa para a análise, que resultou no grafico a esquerda." \
                    "<br><br><br>Os resultados mostraram que existe uma divergência nas expectativas do trabalho remoto " \
                    "relacionado a rendimento, muitos acreditam que não irão performar suficiente e que seu rendimento " \
-                   "seria insatisfátorio em home office, o contrário é levantado pelos que trabalham efetivamente nesse " \
+                   "seria menor em home office (54.32%), o contrário é levantado pelos que trabalham efetivamente nesse " \
                    "mecanismo (75% afirmam rendimento maior em relação ao trabalho presencial)."
 
 work_hours_text = "Para a comparação de perspectivas relacionadas a diferença de carga horária esperada, foi utilizada a " \
@@ -64,7 +65,7 @@ work_hours_text = "Para a comparação de perspectivas relacionadas a diferença
                   "remoto em relação ao presencial é:' e 'Se você já trabalhou presencialmente, acredita que no trabalho " \
                   "remoto sua carga horária:', resultando em repostas fechadas de Maior, Menor ou Igual." \
                   "<br><br><br>Nesse caso, foi interessante analisar que existe uma tendência em acreditar que a carga " \
-                  "horária no trabalho remoto é menor em relação ao presencial, o que é contradizente ao relatado pelos " \
+                  "horária no trabalho remoto é menor em relação ao presencial (14.81%), o que é contradizente ao relatado pelos " \
                   "que trabalham nesse modelo."
 
 academic_impact_text = "Por fim, foi feita a comparação de visões relacionadas ao impacto no rendimento acadêmico dos " \
@@ -72,7 +73,7 @@ academic_impact_text = "Por fim, foi feita a comparação de visões relacionada
                        "possa afetar os estudos?' e 'O trabalho remoto afetou os estudos?', resultando em respostas " \
                        "que foram agrupadas em: Neutro, Negativamente e Positivamente." \
                        "<br><br><br>Nessa análise o destaque vai para o relato de maior impacto negativo rendimento acadêmico no modelo de " \
-                       "home office. Uma tentativa de análise de correlação foi feita para tentar identificar o problema " \
+                       "home office (50%). Uma tentativa de análise de correlação foi feita para tentar identificar o problema " \
                        ", mas foi inconclusiva e será mostrada no fim da análise."
 
 satsxwill_text = "Para tentativa de comparação entre vontade de trabalhar em home office (grupo que não teve contato com home office) " \
