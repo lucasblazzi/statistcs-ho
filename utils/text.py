@@ -40,7 +40,7 @@ abstract = "A pesquisa tem como objetivo principal fazer a **comparação entre 
 
 sample_analysis = "A partir da coleta dos dados podemos notar que a maioria dos alunos que responderam o questionário " \
                   "se encaixaram no grupo de 'Não empregado' (62.7%) que associado aos que trabalham presencialmente (14.3%) " \
-                  "levaram a um agrupamento DE pessoas que nunca " \
+                  "levaram a um agrupamento de pessoas que nunca " \
                   "trabalharam remotamente (77.1%) vs. pessoas que tiveram contato com home office (22.9%), percebendo assim uma assimetria na categorização das amostras, fator esse " \
                   "que motivou a equipe a trabalhar com proporções relativas para a comparação dos dados, já que a média " \
                   "dos dados poderia ser tendenciosa.<br><br><br><br><br><br><br><br><br><br><br><br><br><br>" \
