@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import plotly.figure_factory as ff
+from PIL import Image
 
 from utils.fetch import get_data
 from utils.plot import plot_scatter
@@ -116,8 +117,10 @@ def main():
     }
 
     selection = side_bar.selectbox("Selecione", ["Dashboard", "Dados"])
+    image = Image.open("infografico.png")
 
     if selection == "Dados":
+        st.image(image)
         st.subheader("Questões")
         st.dataframe(raw_data.columns)
         exclude = ("Qual é a sua vontade de trabalhar remotamente?", "Vontade x Satisfação")
@@ -141,6 +144,8 @@ def main():
         _set_title("Outras Observações")
         _satsxreal(visualizations)
 
+        st.markdown("____")
+        st.image(image)
 
 if __name__ == "__main__":
     main()
