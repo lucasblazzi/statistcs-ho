@@ -126,8 +126,8 @@ def plot_table(data, col, title, width=400, height=400):
         ),
         cells=dict(
             values=[df[name] for name in df.columns],
+            font=dict(size=12, color="black"),
             line_color='darkslategray',
-            fill_color='#f0f2f6',
             align = "center"
         ))
     )
