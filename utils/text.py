@@ -81,7 +81,7 @@ satsxwill_text = "Para tentativa de comparação entre vontade de trabalhar em h
                  "nota de 0 a 10 para suas respectivas avaliações. Assim, foi possível fazer uma análise de distribuição dos resultados " \
                  "em cada grupo." \
                  "<br><br>A partir dos dados foram montados o histrograma, o boxplot e o cálculo de variáveis de média e desvio padrão " \
-                 "dos dados. Foi notado que a vontade de trabalhar remotamente é bem distribuida e divide opiniões, que pode ser observado " \
+                 "dos dados, foi notado que a vontade de trabalhar remotamente é bem distribuida e divide opiniões, que pode ser observado " \
                  "através da distribuição dos dados no histrograma, assim como maior simetria do box plot, que abrange todos os valores (0 a 10) " \
                  "na cerca do boxplot, resultado de uma média 6.16 e mediana 6. " \
                  "<br><br>No caso da avaliação de satisfação, pode se perceber uma maior concentração dos dados em uma perspectiva mais positiva " \

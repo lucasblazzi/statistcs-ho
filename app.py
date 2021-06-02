@@ -45,7 +45,7 @@ def _amostra(visualizations, raw_data):
 
     count_raw = raw_data["Curso"].value_counts()
     raw_bar = plot_bar(count_raw, x=count_raw.index, y="Curso",
-                          title="Distribuição por curso", width=1100, height=600, color=count_raw.index)
+                          title="Distribuição por curso", width=800, height=500, color=count_raw.index)
     cols[0].plotly_chart(raw_bar)
     cols[2].markdown("<br><br>", unsafe_allow_html=True)
     cols[2].markdown(sample_analysis, unsafe_allow_html=True)

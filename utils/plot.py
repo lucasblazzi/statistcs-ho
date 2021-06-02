@@ -15,13 +15,13 @@ def plot_scatter(data, x, y):
                    y=0.95, x=0.45,
                    xanchor='center', yanchor='top'
                    ),
-        width=1000,
-        height=500
+        width=800,
+        height=400
     )
     return fig
 
 
-def plot_pie(data, x, y, title, width=500, height=500):
+def plot_pie(data, x, y, title, width=450, height=450):
     fig = px.pie(data, values=x, names=y, color_discrete_sequence=colors)
     fig.update_layout(
         title=dict(text=f"<b>{title}</b>",
@@ -39,7 +39,7 @@ def plot_pie(data, x, y, title, width=500, height=500):
     return fig
 
 
-def plot_bar(data, x, y, title, color, width=700, height=400):
+def plot_bar(data, x, y, title, color, width=600, height=350):
     fig = px.bar(data, x=x, y=y, color=y, color_continuous_scale=default_color)
     fig.update_layout(
         title=dict(text=f"<b>{title}</b>",
@@ -90,8 +90,8 @@ def plot_multi_bar(visualizations, visualization):
             titlefont_size=16,
             tickfont_size=14,
         ),
-        width=900,
-        height=500
+        width=800,
+        height=450
     )
 
     return fig
@@ -108,12 +108,12 @@ def plot_histogram(df, title):
             title="Contagem",
             titlefont_size=16,
             tickfont_size=14,
-        ),
+        )
     )
     return fig
 
 
-def plot_table(data, col, title, width=500, height=500):
+def plot_table(data, col, title, width=400, height=400):
     df = data[col].describe().reset_index()
     _table = go.Figure(go.Table(
         columnwidth=[1, 1],
@@ -150,7 +150,7 @@ def plot_box(data, title, name, col):
                    y=0.9,x=0.5,
                    xanchor='center',yanchor='top'
                    ),
-        width=600,
-        height=400
+        width=500,
+        height=350
     )
     return box
